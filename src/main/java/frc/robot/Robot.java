@@ -18,7 +18,7 @@ import com.kauailabs.navx.*;
 import com.kauailabs.navx.frc.AHRS;
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
-
+import edu.wpi.first.wpilibj.SPI;
 import edu.wpi.first.networktables.NetworkTable;
 import edu.wpi.first.networktables.NetworkTableInstance;
 /**
@@ -59,7 +59,7 @@ public class Robot extends TimedRobot {
     rightSlave.follow(rightMaster);
     drivestick = new Joystick(0);
     SmartDashboard.putString("Status Message", "timedInit");
-    navX = new AHRS(Port.kMXP);
+    navX = new AHRS(SPI.Port.kMXP);
     leftMaster.clearStickyFaults(30);
     rightMaster.clearStickyFaults(30);
     NetworkTableInstance.getDefault().setUpdateRate(.02);
