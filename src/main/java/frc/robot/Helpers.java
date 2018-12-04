@@ -1,6 +1,8 @@
 package frc.robot;
 
-public class Helpers{
+import java.text.DecimalFormat;
+
+public class Helpers {
 
     public static double  DeadbandJoystick(double value){
         double deadband = Constants.joystickDeadband;
@@ -14,6 +16,16 @@ public class Helpers{
         /* Outside deadband */
         return 0;
 
+    }
+    public static String DblTo2PLaces(double input) {
+        DecimalFormat decimalFormat = new DecimalFormat("#,##0.00");
+        String numberAsString = decimalFormat.format(input);
+        return numberAsString;
+    }
+    public static String DblTo1PLace(double input) {
+        DecimalFormat decimalFormat = new DecimalFormat("#,##0.00");
+        String numberAsString = decimalFormat.format(input);
+        return numberAsString;
     }
 
 }
